@@ -1,0 +1,24 @@
+﻿@model List<SubjectModel>
+@{
+    ViewData["Title"] = "Subjects";
+}
+
+<h2>Subjects</h2>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Subject</th>
+            <th></th>
+        </tr>
+        @foreach (var subject in Model)
+        {
+    <tr>
+        <td>@subject.Subject</td>
+        <td>
+            <a asp-controller="Subject" asp-action="View" asp-route-id="@subject.Id">View grades</a>
+        </td>
+    </tr>
+
+        }
+    </table>
+

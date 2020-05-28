@@ -1,0 +1,34 @@
+﻿@model List<StudentModel>
+@{
+    ViewData["Title"] = "Average grades";
+}
+
+<h2>Average grades</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Surname</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Average Grade</th>
+    </tr>
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.Surname</td>
+            <td>@student.Name</td>
+            <td>@student.Class</td>
+            <td>
+                @if (student.AvgGrade == 0)
+                {
+                    <span>No grades!</span>
+                }
+                else
+                {
+                    @Math.Round(student.AvgGrade, 1)
+                }
+            </td>
+        </tr>
+    }
+</table>
+

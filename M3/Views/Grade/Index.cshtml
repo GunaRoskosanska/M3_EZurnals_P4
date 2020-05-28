@@ -1,0 +1,27 @@
+﻿@model List<GradeModel>
+@{
+    ViewData["Title"] = "Grades";
+}
+
+<h2>Grades</h2>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Surname</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Grade</th>
+            <th>Description</th>
+        </tr>
+        @foreach (var grade in Model)
+        {
+         <tr>
+            <td>@grade.Surname</td>
+            <td>@grade.Name</td>
+            <td>@grade.Subject</td>
+            <th>@grade.Grade</th>
+            <td>@grade.Description</td>
+         </tr>
+        }
+    </table>
+
